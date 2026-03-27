@@ -172,14 +172,14 @@ This project is licensed under the MIT License.
 
 If you use this dataset in your research or project, please cite our work:
 
-> Naeem, Md. Mehedi Hasan, et al. "LUMO: A Privacy-Preserving Offline Voice Assistant." *Jatiya Kabi Kazi Nazrul Islam University, Bangladesh*, 2025.
+> Naeem, Md Mehedi Hasan, and Md Ashraful Islam. "Machine Learning-Based Prediction of Restaurant Food Waste for Sustainable Food Management." *Jatiya Kabi Kazi Nazrul Islam University, Bangladesh*, 2026.
 
 **BibTeX:**
 ```bibtex
-@article{naeem2025lumo,
-  title       = {LUMO: A Privacy-Preserving Offline Voice Assistant},
-  author      = {Naeem, Md. Mehedi Hasan and others},
-  year        = {2025},
+@article{naeem2026foodwaste,
+  title       = {Machine Learning-Based Prediction of Restaurant Food Waste for Sustainable Food Management},
+  author      = {Naeem, Md Mehedi Hasan and Islam, Md Ashraful},
+  year        = {2026},
   institution = {Jatiya Kabi Kazi Nazrul Islam University, Bangladesh}
 }
 ```
