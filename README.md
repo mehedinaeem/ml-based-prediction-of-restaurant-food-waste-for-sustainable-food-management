@@ -166,7 +166,7 @@ For improvements or corrections to this dataset documentation, please create an 
 
 ## License
 
-[Add appropriate license information]
+This project is licensed under the MIT License.
 
 ## Citation
 
