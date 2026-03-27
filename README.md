@@ -170,7 +170,19 @@ This project is licensed under the MIT License.
 
 ## Citation
 
-If you use this dataset in your research or project, please cite appropriately.
+If you use this dataset in your research or project, please cite our work:
+
+> Naeem, Md. Mehedi Hasan, et al. "LUMO: A Privacy-Preserving Offline Voice Assistant." *Jatiya Kabi Kazi Nazrul Islam University, Bangladesh*, 2025.
+
+**BibTeX:**
+```bibtex
+@article{naeem2025lumo,
+  title       = {LUMO: A Privacy-Preserving Offline Voice Assistant},
+  author      = {Naeem, Md. Mehedi Hasan and others},
+  year        = {2025},
+  institution = {Jatiya Kabi Kazi Nazrul Islam University, Bangladesh}
+}
+```
 
 ---
 
