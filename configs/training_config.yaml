@@ -1,0 +1,25 @@
+data:
+  raw_path: data/raw/restaurant_data.csv
+  waste_path: data/raw/food_waste_data.csv
+  weather_path: data/raw/weather_data.csv
+  processed_path: data/processed/restaurant_food_waste_final_dataset.csv
+
+model:
+  type: random_forest
+  random_state: 42
+  n_estimators: 100
+  max_depth: 10
+
+training:
+  test_size: 0.2
+  val_size: 0.1
+  target: food_waste_kg
+  feature_columns:
+    - avg_checkout_price
+    - avg_base_price
+    - estimated_customers
+    - num_orders
+    - food_sold_kg
+    - food_prepared_kg
+    - temperature_c
+    - precipitation_mm

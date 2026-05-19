@@ -147,10 +147,63 @@ Accurate food waste prediction can help restaurants:
 ## File Structure
 
 ```
-restaurant-food-waste-for-sustainable-food-management/
-├── README.md (this file)
-├── restaurant_food_waste_final_dataset.csv
-└── [Additional analysis and model files]
+ml-restaurant-food-waste/
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── LICENSE
+├── setup.py
+├── data/
+│   ├── raw/
+│   │   ├── restaurant_data.csv
+│   │   ├── food_waste_data.csv
+│   │   └── weather_data.csv
+│   ├── processed/
+│   │   └── restaurant_food_waste_final_dataset.csv
+│   └── external/
+│       └── additional_sources/
+├── notebooks/
+│   ├── 01_data_analysis.ipynb
+│   ├── 02_preprocessing.ipynb
+│   ├── 03_model_training.ipynb
+│   └── 04_result_analysis.ipynb
+├── src/
+│   ├── data/
+│   │   ├── merge_datasets.py
+│   │   ├── preprocess.py
+│   │   └── feature_engineering.py
+│   ├── models/
+│   │   ├── train.py
+│   │   ├── predict.py
+│   │   ├── evaluate.py
+│   │   └── model_utils.py
+│   ├── visualization/
+│   │   ├── plots.py
+│   │   └── dashboard.py
+│   └── utils/
+│       ├── config.py
+│       └── helpers.py
+├── models/
+│   ├── random_forest.pkl
+│   ├── gradient_boosting.pkl
+│   └── scaler.pkl
+├── reports/
+│   ├── figures/
+│   │   ├── feature_importance.png
+│   │   ├── actual_vs_predicted.png
+│   │   └── correlation_heatmap.png
+│   ├── ieee_paper/
+│   │   ├── paper.pdf
+│   │   ├── paper.tex
+│   │   └── references.bib
+│   └── results/
+│       ├── metrics.json
+│       └── experiment_logs.txt
+├── configs/
+│   └── training_config.yaml
+└── app/
+    ├── streamlit_app.py
+    └── api.py
 ```
 
 ## Notes

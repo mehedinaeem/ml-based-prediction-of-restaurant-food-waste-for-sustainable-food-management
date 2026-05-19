@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+env/
+venv/
+.python-version
+
+# Jupyter
+# .ipynb_checkpoints/
+
+# Data
+data/raw/
+*.csv
+*.xlsx
+
+# VS Code
+.vscode/
+
+# Mac
+.DS_Store
+
+# Models and logs
+# models/
+# reports/results/*.json
+# reports/results/*.txt
