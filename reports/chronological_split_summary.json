@@ -1,0 +1,17 @@
+{
+  "split_strategy": "chronological",
+  "training_ratio": 0.7,
+  "testing_ratio": 0.30000000000000004,
+  "total_records": 77980,
+  "training_records": 54495,
+  "testing_records": 23485,
+  "total_unique_dates": 1015,
+  "training_unique_dates": 710,
+  "testing_unique_dates": 305,
+  "training_start_date": 0,
+  "training_end_date": 709,
+  "testing_start_date": 710,
+  "testing_end_date": 1014,
+  "split_date": 710,
+  "overlapping_dates": 0
+}

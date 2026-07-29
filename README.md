@@ -135,6 +135,35 @@ This dataset is suitable for:
 - Academic research on food waste prediction
 - Business intelligence and analytics
 
+## Chronological Evaluation Protocol
+
+Model evaluation follows the temporal order of the dataset. Records are stably
+ordered by date and restaurant, and the earliest 70% of unique dates are used
+for training. The latest 30% of unique dates are held out for final testing, so
+the same date can never appear in both partitions.
+
+A five-fold expanding-window `TimeSeriesSplit` is performed using complete date
+groups from the training period. Each validation period occurs strictly after
+its corresponding training period. The final test period remains completely
+untouched until the hold-out evaluation.
+
+Run the pipeline from the project root:
+
+```bash
+python src/models/train.py
+```
+
+The pipeline generates:
+
+- `reports/model_results.csv` — final chronological hold-out metrics
+- `reports/chronological_split_summary.json` — split dates and record counts
+- `reports/time_series_cv_fold_results.csv` — metrics for every model and fold
+- `reports/time_series_cv_summary.csv` — aggregated cross-validation metrics
+- `reports/figures/` — hold-out comparison, feature-importance, and
+  actual-versus-predicted figures
+- `models/` — fitted models, training-only scaler, selected features, and split
+  metadata
+
 ## Sustainability Impact
 
 Accurate food waste prediction can help restaurants:
