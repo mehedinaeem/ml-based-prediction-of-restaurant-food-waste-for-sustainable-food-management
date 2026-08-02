@@ -147,6 +147,41 @@ groups from the training period. Each validation period occurs strictly after
 its corresponding training period. The final test period remains completely
 untouched until the hold-out evaluation.
 
+## Gaussian Proxy Target Construction
+
+The experiments use the paper's constructed proxy target, not directly
+measured restaurant food waste:
+
+\[
+W_i = \alpha P_i(1 - \beta C_i) + \epsilon_i,
+\qquad \epsilon_i \sim \mathcal{N}(0, \sigma^2)
+\]
+
+Here, `P_i` is `food_prepared_kg` and `C_i` is
+`food_sold_kg / food_prepared_kg`. The fixed parameters are `alpha = 1.0`,
+`beta = 1.0`, `sigma = 1.0 kg`, and random seed `42`. Consequently, before
+noise is added, `P_i(1 - C_i) = food_prepared_kg - food_sold_kg`, recovering
+the original deterministic target within strict floating-point tolerance.
+
+Gaussian noise is generated exactly once over records stably ordered by date
+and restaurant. The realization and all audit columns are saved in
+`data/processed/eda_processed_dataset_gaussian.csv`; training, cross-validation,
+ablation, and figures all reuse those values. Noise is never clipped, resampled,
+or independently regenerated for folds or models. The original
+`data/processed/eda_processed_dataset.csv` remains unchanged.
+
+From the project root, reproduce target construction alone or the complete
+experiment with:
+
+```bash
+python src/data/construct_target.py
+python src/models/train.py
+```
+
+The training command also reconstructs the target once before splitting, so a
+single command is sufficient for a full run. All reported metrics must come
+from the generated Gaussian-target dataset.
+
 Run the pipeline from the project root:
 
 ```bash
@@ -159,6 +194,8 @@ The pipeline generates:
 - `reports/chronological_split_summary.json` — split dates and record counts
 - `reports/time_series_cv_fold_results.csv` — metrics for every model and fold
 - `reports/time_series_cv_summary.csv` — aggregated cross-validation metrics
+- `reports/target_construction_metadata.json` — target parameters and observed statistics
+- `reports/ablation_results.csv` — chronological Random Forest leakage ablation
 - `reports/figures/` — hold-out comparison, feature-importance, and
   actual-versus-predicted figures
 - `models/` — fitted models, training-only scaler, selected features, and split

@@ -1,0 +1,4 @@
+Configuration,Included Leakage Features,Excluded Leakage Features,Training Records,Testing Records,MAE,RMSE,R2 Score
+Configuration 1,"food_prepared_kg, food_sold_kg, num_orders",None,54495,23485,0.974396967892,1.431785815496,0.994665341145
+Configuration 2,num_orders,"food_prepared_kg, food_sold_kg",54495,23485,1.442797341223,2.162960892524,0.987825591351
+Configuration 3,None,"food_prepared_kg, food_sold_kg, num_orders",54495,23485,6.272647979722,8.456579507186,0.813902725124

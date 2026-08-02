@@ -10,6 +10,21 @@ model:
   n_estimators: 100
   max_depth: 10
 
+target_construction:
+  enabled: true
+  formula: "W_i = alpha * P_i * (1 - beta * C_i) + epsilon_i"
+  prepared_column: food_prepared_kg
+  sold_column: food_sold_kg
+  consumption_ratio: "food_sold_kg / food_prepared_kg"
+  alpha: 1.0
+  beta: 1.0
+  sigma_kg: 1.0
+  random_seed: 42
+  original_target_column: food_waste_kg
+  generated_target_column: food_waste_kg
+  source_dataset: data/processed/eda_processed_dataset.csv
+  generated_dataset: data/processed/eda_processed_dataset_gaussian.csv
+
 training:
   split_strategy: chronological
   train_ratio: 0.70
@@ -19,11 +34,22 @@ training:
   cv_splits: 5
   target: food_waste_kg
   feature_columns:
+    - year
+    - month
+    - week
+    - day_of_week
+    - restaurant_id
+    - city_code
+    - region_code
+    - center_type
+    - op_area
+    - unique_meals
+    - dominant_category
+    - dominant_cuisine
     - avg_checkout_price
     - avg_base_price
-    - estimated_customers
-    - num_orders
-    - food_sold_kg
-    - food_prepared_kg
+    - emailer_promo_rate
+    - homepage_feature_rate
+    - is_weekend
+    - is_holiday
     - temperature_c
-    - precipitation_mm
